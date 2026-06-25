@@ -24,9 +24,6 @@
       min-height: 100vh;
     }
 
-    /* ============================================
-       PAGE CONTAINER
-       ============================================ */
     .page {
       display: none;
       padding: 16px;
@@ -171,10 +168,6 @@
       color: #1a237e;
     }
 
-    .bottom-nav button.active .icon {
-      transform: scale(1.05);
-    }
-
     .bottom-nav button .badge-nav {
       position: absolute;
       top: 2px;
@@ -210,13 +203,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-    }
-
-    .card-title .sub {
-      font-weight: 400;
-      font-size: 0.75rem;
-      color: #757575;
-      margin-left: auto;
     }
 
     /* ============================================
@@ -278,7 +264,9 @@
       color: #e53935;
     }
 
-    /* Radio / Chip Group untuk Kategori */
+    /* ============================================
+       CHIP GROUP (Kategori & Prioritas)
+       ============================================ */
     .chip-group {
       display: flex;
       gap: 8px;
@@ -309,7 +297,6 @@
       transform: scale(0.96);
     }
 
-    /* Priority Chips */
     .priority-group {
       display: flex;
       gap: 8px;
@@ -459,20 +446,6 @@
       transform: none;
     }
 
-    .btn-secondary {
-      background: #e8eaf6;
-      color: #1a237e;
-    }
-
-    .btn-secondary:active {
-      background: #c5cae9;
-    }
-
-    .btn-success {
-      background: #43a047;
-      color: #fff;
-    }
-
     /* ============================================
        HISTORY / REPORT LIST
        ============================================ */
@@ -614,13 +587,8 @@
       color: #c62828;
     }
 
-    .badge-pending {
-      background: #fff8e1;
-      color: #f57f17;
-    }
-
     /* ============================================
-       GREETING / HEADER
+       GREETING
        ============================================ */
     .greeting {
       margin-bottom: 20px;
@@ -643,7 +611,7 @@
     }
 
     /* ============================================
-       FEATURE CARDS (Info)
+       FEATURE CARDS
        ============================================ */
     .feature-grid {
       display: grid;
@@ -714,7 +682,7 @@
     }
 
     /* ============================================
-       ALERT / TOAST
+       ALERT
        ============================================ */
     .alert {
       padding: 12px 16px;
@@ -769,22 +737,6 @@
     .login-logo p {
       color: #757575;
       font-size: 0.85rem;
-    }
-
-    /* ============================================
-       SCROLLBAR
-       ============================================ */
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #c5cae9;
-      border-radius: 4px;
     }
 
     /* ============================================
@@ -1104,8 +1056,7 @@
     const map = {
       'DONE': 'badge-done',
       'PROGRESS': 'badge-progress',
-      'OPEN': 'badge-open',
-      'PENDING': 'badge-pending'
+      'OPEN': 'badge-open'
     };
     return `<span class="badge ${map[status] || 'badge-open'}">${status || 'OPEN'}</span>`;
   }
@@ -1391,7 +1342,6 @@
       el.addEventListener('click', function() {
         const id = this.dataset.id;
         alert('Detail laporan #' + id + '\n\nFitur detail akan segera hadir.');
-        // Bisa diarahkan ke halaman detail jika diperlukan
       });
     });
 
